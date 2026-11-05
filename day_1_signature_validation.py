@@ -1,3 +1,4 @@
+import sys
 def verify(message, key, signature):
     from string import ascii_letters as alphabets
     
@@ -7,8 +8,13 @@ def verify(message, key, signature):
         encode[letter] = count
         count += 1
 
+    
+    complete_key = ''
+    try:
+        complete_key = message + key
+    except TypeError:
+        sys.exit("Message and key inputs only take strings")
 
-    complete_key = message + key
     only_alphabets = filter(lambda n:n.isalpha(), complete_key)
 
     total = 0
