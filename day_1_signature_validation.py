@@ -7,9 +7,15 @@ def verify(message, key, signature):
         encode[letter] = count
         count += 1
 
-    print(encode)
+
+    complete_key = message + key
+    only_alphabets = filter(lambda n:n.isalpha(), complete_key)
+
+    total = 0
+    for val in only_alphabets:
+        total += encode[val]
+    print(total)
 
     
-
-verify(1,2,3)
+verify("Check out the freeCodeCamp podcast,", "in the mobile app", 514)
     # return message
