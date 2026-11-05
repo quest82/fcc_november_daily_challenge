@@ -14,8 +14,7 @@ def verify(message, key, signature):
     total = 0
     for val in only_alphabets:
         total += encode[val]
-    print(total)
 
-    
-verify("Check out the freeCodeCamp podcast,", "in the mobile app", 514)
-    # return message
+    return total == signature
+
+print(verify("Check out the freeCodeCamp podcast,", "in the mobile app", 514))
