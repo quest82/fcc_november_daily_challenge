@@ -14,6 +14,17 @@ def infected(days):
 
     return total
 
+
+# AI alternate compact code
+
+
+# def infected(days):
+#     total = 1
+#     for day in range(1, days + 1):
+#         total *= 2
+#         if day % 3 == 0:
+#             total -= math.ceil(total / 5)
+#     return total
         
 
 print(infected(25))
